@@ -10,3 +10,4 @@
 5. Toggle task
 6. Logout
 7. Relogin and view saved task   
+8. Search task
