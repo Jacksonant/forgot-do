@@ -1,0 +1,89 @@
+.summary-card {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #0000000a;
+  border-radius: 12px;
+  padding: 24px 28px;
+  min-width: 0;
+}
+
+.summary-card-title {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #537178;
+  opacity: 1;
+  margin: 0 0 16px 0;
+}
+
+.summary-card-percentage {
+  display: flex;
+  align-items: flex-end;
+  gap: 0px;
+}
+
+.summary-card-value {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 74px;
+  letter-spacing: 0px;
+  color: #5285ec;
+  opacity: 1;
+}
+
+.summary-card-total {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #8f9ea2;
+  opacity: 1;
+}
+
+.summary-card-list {
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.summary-card-list-item {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: #8f9ea2;
+  opacity: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-card-list-item::marker {
+  color: #8f9ea2;
+  font-size: 24px;
+}
+
+.summary-card-list-item.completed {
+  text-decoration: line-through;
+  text-decoration-color: #707070;
+  text-decoration-thickness: 1.5px;
+  color: #8f9ea2;
+}
+
+@media (max-width: 768px) {
+  .summary-card {
+    border-radius: 0px;
+  }
+}
