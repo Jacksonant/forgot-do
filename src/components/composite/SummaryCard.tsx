@@ -13,20 +13,21 @@ interface SummaryCardProps {
 
 export const SummaryCard = ({ title, type, data }: SummaryCardProps) => {
   return (
-    <div className="summary-card">
+    <div className="summary-card" role="region" aria-label={title || 'Summary card'}>
       {title && <h3 className="summary-card-title">{title}</h3>}
       {type === 'percentage' && data && (
-        <div className="summary-card-percentage">
+        <div className="summary-card-percentage" role="status" aria-label={`${data.value} of ${data.total} tasks completed`}>
           <span className="summary-card-value">{data.value}</span>
           <span className="summary-card-total">/ {data.total}</span>
         </div>
       )}
       {type === 'list' && data?.items && (
-        <ul className="summary-card-list">
+        <ul className="summary-card-list" role="list" aria-label="Latest created tasks">
           {data.items.map((item, index) => (
             <li 
               key={index} 
               className={`summary-card-list-item ${item.completed ? 'completed' : ''}`}
+              role="listitem-summary"
             >
               {item.text}
             </li>

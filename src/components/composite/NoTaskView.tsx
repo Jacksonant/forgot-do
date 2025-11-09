@@ -19,14 +19,14 @@ export const NoTaskView = ({ onAddTask }: NoTaskViewProps) => {
   return (
     <div className="app">
       <Navbar />
-      <div className="no-task-container">
-        <div className="no-task-card">
+      <main className="no-task-container" role="main">
+        <div className="no-task-card" role="region" aria-label="Empty task list">
           <p className="no-task-text">You have no task.</p>
-          <Button onClick={() => setShowModal(true)}>
+          <Button onClick={() => setShowModal(true)} ariaLabel="Create new task">
             + New Task
           </Button>
         </div>
-      </div>
+      </main>
       {showModal && <AddTaskModal onClose={() => setShowModal(false)} onAdd={handleAddTask} />}
     </div>
   )

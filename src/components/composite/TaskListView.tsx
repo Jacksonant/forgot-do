@@ -40,8 +40,8 @@ export const TaskListView = ({ tasks, onAddTask, onToggleComplete, onDeleteTask,
   return (
     <div className="app">
       <Navbar />
-      <div className="task-list-content">
-        <div className="summary-cards">
+      <main className="task-list-content" role="main">
+        <div className="summary-cards" role="region" aria-label="Task summary">
           <SummaryCard
             title="Tasks Completed"
             type="percentage"
@@ -66,7 +66,7 @@ export const TaskListView = ({ tasks, onAddTask, onToggleComplete, onDeleteTask,
           onDelete={onDeleteTask}
           onAddNew={() => setShowModal(true)}
         />
-      </div>
+      </main>
       {showModal && (
         <AddTaskModal
           onClose={() => setShowModal(false)}

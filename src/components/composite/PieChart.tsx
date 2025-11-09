@@ -28,8 +28,8 @@ export const PieChart = ({ completed, total }: PieChartProps) => {
   };
 
   return (
-    <div className="pie-chart-container">
-      <svg viewBox="0 0 200 200" className="pie-chart">
+    <div className="pie-chart-container" role="img" aria-label={`Task completion chart: ${completed} of ${total} tasks completed, ${Math.round(percentage)}%`}>
+      <svg viewBox="0 0 200 200" className="pie-chart" aria-hidden="true">
         {/* Background circle */}
         <circle
           cx="100"
@@ -86,7 +86,7 @@ export const PieChart = ({ completed, total }: PieChartProps) => {
 
       {/* Tooltip on hover */}
       {blueHovered && (
-        <div className="pie-chart-tooltip">
+        <div className="pie-chart-tooltip" role="tooltip">
           <div className="pie-chart-label">Completed Tasks</div>
           <div className="pie-chart-divider"></div>
           <div className="pie-chart-value">{completed}</div>
@@ -94,7 +94,7 @@ export const PieChart = ({ completed, total }: PieChartProps) => {
       )}
 
       {grayHovered && (
-        <div className="pie-chart-tooltip pie-chart-tooltip-left">
+        <div className="pie-chart-tooltip pie-chart-tooltip-left" role="tooltip">
           <div className="pie-chart-label">Incomplete Tasks</div>
           <div className="pie-chart-divider"></div>
           <div className="pie-chart-value">{total - completed}</div>

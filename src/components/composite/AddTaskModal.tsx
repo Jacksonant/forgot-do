@@ -48,6 +48,7 @@ export const AddTaskModal = ({ onClose, onAdd, initialValue = '', mode = 'create
         }}
         error={error}
         autoFocus
+        ariaLabel="Task name input"
       />
     </Modal>
   )

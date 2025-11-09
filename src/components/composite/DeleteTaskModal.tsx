@@ -14,7 +14,7 @@ export const DeleteTaskModal = ({ taskName, onClose, onConfirm }: DeleteTaskModa
       title="Delete Task"
       onClose={onClose}
       onSubmit={onConfirm}
-      submitLabel="Delete"
+      submitLabel="Confirm"
     >
       <p
         style={{
@@ -23,6 +23,7 @@ export const DeleteTaskModal = ({ taskName, onClose, onConfirm }: DeleteTaskModa
           fontSize: "14px",
           color: "#537178",
         }}
+        role="alert"
       >
         Are you sure you want to delete this task <strong>({truncatedName})</strong>? This action cannot be undone.
       </p>

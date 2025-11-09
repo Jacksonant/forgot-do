@@ -32,23 +32,25 @@ export const TaskRow = ({
       onClick={() => onToggleComplete(task.id)}
       onMouseEnter={(e) => onMouseEnter(task.id, e)}
       onMouseLeave={onMouseLeave}
+      role="listitem"
     >
       <input
         type="checkbox"
         checked={task.completed}
         onChange={() => {}}
         className="task-checkbox"
+        aria-label={`Mark task "${task.name}" as ${task.completed ? 'incomplete' : 'complete'}`}
       />
       <span className={`task-name ${task.completed ? "completed" : ""}`}>
         {task.name}
       </span>
 
-      <div className="task-actions" onClick={(e) => e.stopPropagation()}>
-        <button onClick={() => onEdit(task.id)} className="task-action-btn">
-          <img src={pencilIcon} alt="edit" className="icon" />
+      <div className="task-actions" onClick={(e) => e.stopPropagation()} role="group" aria-label="Task actions">
+        <button onClick={() => onEdit(task.id)} className="task-action-btn" aria-label={`Edit task "${task.name}"`}>
+          <img src={pencilIcon} alt="" className="icon" aria-hidden="true" />
         </button>
-        <button onClick={() => onDelete(task.id)} className="task-action-btn">
-          <img src={trashIcon} alt="delete" className="icon" />
+        <button onClick={() => onDelete(task.id)} className="task-action-btn" aria-label={`Delete task "${task.name}"`}>
+          <img src={trashIcon} alt="" className="icon" aria-hidden="true" />
         </button>
       </div>
     </div>

@@ -23,12 +23,14 @@ export const UnauthedView = () => {
           value={formData.userId}
           onChange={(value) => updateField('userId', value)}
           error={errors.userId}
+          ariaLabel="User ID"
         />
         <Input
           placeholder="Name"
           value={formData.userName}
           onChange={(value) => updateField('userName', value)}
           error={errors.userName}
+          ariaLabel="User Name"
         />
       </Modal>
     </div>

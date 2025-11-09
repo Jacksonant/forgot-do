@@ -14,13 +14,13 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation" aria-label="Main navigation">
       <div className="navbar-content">
-        <div className="user-info">
-          <img src={avatarImg} alt="avatar" className="avatar" />
+        <div className="user-info" role="region" aria-label="User information">
+          <img src={avatarImg} alt={`${user?.name} avatar`} className="avatar" />
           <span className="username">{user?.name}</span>
         </div>
-        <button className="logout-button" onClick={handleLogout}>
+        <button className="logout-button" onClick={handleLogout} aria-label="Logout">
           Logout
         </button>
       </div>

@@ -63,25 +63,27 @@ export const TaskTable = ({
               placeholder="Search by task name"
               value={searchQuery}
               onChange={setSearchQuery}
-              leftIcon={<img src={searchIcon} alt="search" className="icon" />}
+              leftIcon={<img src={searchIcon} alt="" className="icon" />}
               rightIcon={
                 searchQuery ? (
-                  <span
+                  <button
                     onClick={() => setSearchQuery("")}
-                    style={{ fontSize: "18px", fontWeight: "bold" }}
+                    style={{ fontSize: "18px", fontWeight: "bold", background: "none", border: "none", cursor: "pointer" }}
+                    aria-label="Clear search"
                   >
                     ×
-                  </span>
+                  </button>
                 ) : null
               }
               className="task-search-input"
+              ariaLabel="Search tasks by name"
             />
           </div>
-          <Button onClick={onAddNew} fullWidth>+ New Task</Button>
+          <Button onClick={onAddNew} fullWidth ariaLabel="Create new task">+ New Task</Button>
         </div>
       </div>
       <div className="task-table-container">
-        <div className="task-table-list">
+        <div className="task-table-list" role="list" aria-label="Task list">
           {filteredTasks.map((task) => (
             <TaskRow
               key={task.id}
@@ -102,6 +104,7 @@ export const TaskTable = ({
             right: `calc(100vw - ${tooltipPosition.x}px)`,
             top: `${tooltipPosition.y}px`,
           }}
+          role="tooltip"
         >
           {(() => {
             const task = filteredTasks.find((t) => t.id === hoveredTask);

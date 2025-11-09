@@ -18,9 +18,9 @@ export const Modal = ({ title, onClose, onSubmit, submitLabel, showOverlay = tru
   }
 
   const content = (
-    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby={title ? 'modal-title' : undefined}>
       <form onSubmit={handleSubmit}>
-        {title && <h2 className="modal-title">{title}</h2>}
+        {title && <h2 className="modal-title" id="modal-title">{title}</h2>}
         {children}
         {onSubmit && (
           <Button type="submit">
@@ -36,7 +36,7 @@ export const Modal = ({ title, onClose, onSubmit, submitLabel, showOverlay = tru
   }
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={onClose} role="presentation">
       {content}
     </div>
   )
